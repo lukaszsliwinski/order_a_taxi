@@ -2,6 +2,10 @@ const cityInput1 = document.getElementById("cityInput");
 const cityInput2 = document.getElementById("cityInput2");
 const cityInput3 = document.getElementById("cityInput3");
 
+const dateInput = document.getElementById("dateInput");
+const today = new Date();
+const plusTwoWeeks = new Date(Date.now() + 12096e5);
+
 const autocompleteList1 = document.getElementById("autocompleteList1");
 const autocompleteList2 = document.getElementById("autocompleteList2");
 const autocompleteList3 = document.getElementById("autocompleteList3");
@@ -32,9 +36,6 @@ const autocomplete = (input, autocompleteList) => {
             autocompleteItem.classList.add("autocomplete-item");
             autocompleteItem.innerHTML = city;
             autocompleteList.appendChild(autocompleteItem);
-            
-
-            // autocompleItem.setAttribute("onclick", `fillInput(${city, input})`);
             autocompleteItem.addEventListener("click", () => {
                 fillInput(city, input);
             })
@@ -73,3 +74,22 @@ cityInput3.addEventListener("keyup", () => {
     autocomplete(cityInput3, autocompleteList3);
 });
 
+
+const formatDate = (date) => {
+    let year = date.getFullYear().toString();
+    let month = date.getMonth()+1;
+    if (month < 10) {
+        month = "0" + month.toString();
+    }
+    let day = date.getDate();
+    if (day < 10) {
+        day = "0" + day.toString();
+    }
+    return year + "-" + month + "-" + day;
+}
+
+const min = formatDate(today);
+const max = formatDate(plusTwoWeeks);
+
+dateInput.setAttribute("min", `${min}`);
+dateInput.setAttribute("max", `${max}`);
