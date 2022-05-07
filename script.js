@@ -1,5 +1,10 @@
-const cityInput = document.getElementById("cityInput");
-const autocompleList = document.getElementById("list1");
+const cityInput1 = document.getElementById("cityInput");
+const cityInput2 = document.getElementById("cityInput2");
+const cityInput3 = document.getElementById("cityInput3");
+
+const autocompleteList1 = document.getElementById("autocompleteList1");
+const autocompleteList2 = document.getElementById("autocompleteList2");
+const autocompleteList3 = document.getElementById("autocompleteList3");
 
 let cities = [
     "Katowice",
@@ -16,26 +21,29 @@ let cities = [
     "Mysłowice",
 ];
 
-cityInput.addEventListener("keyup", () => {
+const autocomplete = (input, autocompleteList) => {
     clearList();
     cities.forEach((city) => {
         
-        if (city.toLowerCase().startsWith(cityInput.value.toLowerCase()) && cityInput.value != "") {
-            autocompleList.style.display = "block";
+        if (city.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != "") {
+            autocompleteList.style.display = "block";
             
-            let autocompleItem = document.createElement("li");
-            autocompleItem.classList.add("autocomplete-item");
-            autocompleItem.innerHTML = city;
-            document.querySelector(".list").appendChild(autocompleItem);
+            let autocompleteItem = document.createElement("li");
+            autocompleteItem.classList.add("autocomplete-item");
+            autocompleteItem.innerHTML = city;
+            autocompleteList.appendChild(autocompleteItem);
+            
 
-            autocompleItem.setAttribute("onclick", "fillCityInput('" + city + "')");
+            // autocompleItem.setAttribute("onclick", `fillInput(${city, input})`);
+            autocompleteItem.addEventListener("click", () => {
+                fillInput(city, input);
+            })
         }
     })
-});
+}
 
-
-function fillCityInput(value) {
-    cityInput.value = value;
+function fillInput(value, input) {
+    input.value = value;
     clearList();
 }
 
@@ -43,7 +51,25 @@ function clearList() {
     let items = document.querySelectorAll(".autocomplete-item");
     items.forEach((item) => {
         item.remove();
-    
-    })
-    autocompleList.style.display = "none";
+    });
+
+    let lists = document.querySelectorAll(".autocomplete-list");
+    lists.forEach((list) => {
+        list.style.display = "none"
+    });
 }
+
+
+
+cityInput1.addEventListener("keyup", () => {
+    autocomplete(cityInput1, autocompleteList1);
+});
+
+cityInput2.addEventListener("keyup", () => {
+    autocomplete(cityInput2, autocompleteList2);
+});
+
+cityInput3.addEventListener("keyup", () => {
+    autocomplete(cityInput3, autocompleteList3);
+});
+
