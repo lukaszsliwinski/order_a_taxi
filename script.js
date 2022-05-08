@@ -186,6 +186,8 @@ function validateForm() {
         return false;
     }
 
+    alert("Wysłano zamówienie");
+    
     return true;
 }
 
