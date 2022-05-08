@@ -31,6 +31,10 @@ const cities = [
     "Mikołów",
     "Tychy",
     "Mysłowice",
+    "Dąbrowa Górnicza",
+    "Sosnowiec",
+    "Będzin",
+    "Czeladź",
 ];
 
 const workers = [
@@ -136,3 +140,51 @@ const max = formatDate(plusTwoWeeks);
 
 dateInput.setAttribute("min", `${min}`);
 dateInput.setAttribute("max", `${max}`);
+dateInput.setAttribute("onfocus", "(this.type='date')");
+
+
+function validateForm() {
+    if (!cities.includes(document.form.cityInput1.value)) {
+        document.form.cityInput1.focus()
+        alert(`${document.form.cityInput1.value} nie znajduje się w bazie miast.`);
+        return false;
+    }
+
+    if (!cities.includes(document.form.cityInput2.value) && document.form.workerInput2.value != "") {
+        document.form.cityInput2.focus()
+        alert(`${document.form.cityInput2.value} nie znajduje się w bazie miast.`);
+        return false;
+    }
+
+    if (!cities.includes(document.form.cityInput3.value)) {
+        document.form.cityInput3.focus()
+        alert(`${document.form.cityInput3.value} nie znajduje się w bazie miast.`);
+        return false;
+    }
+
+    if (!workers.includes(document.form.workerInput1.value)) {
+        document.form.workerInput1.focus()
+        alert(`${document.form.workerInput1.value} nie znajduje się na liście pracowników.`);
+        return false;
+    }
+
+    if (!workers.includes(document.form.workerInput3.value) && document.form.workerInput2.value != "") {
+        document.form.workerInput3.focus()
+        alert(`${document.form.workerInput3.value} nie znajduje się na liście pracowników.`);
+        return false;
+    }
+
+    if (!workers.includes(document.form.workerInput3.value) && document.form.workerInput3.value != "") {
+        document.form.workerInput3.focus()
+        alert(`${document.form.workerInput3.value} nie znajduje się na liście pracowników.`);
+        return false;
+    }
+
+    if (!workers.includes(document.form.workerInput4.value) && document.form.workerInput4.value != "") {
+        document.form.workerInput4.focus()
+        alert(`${document.form.workerInput4.value} nie znajduje się na liście pracowników.`);
+        return false;
+    }
+
+    return true;
+}
