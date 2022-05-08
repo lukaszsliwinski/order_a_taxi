@@ -59,18 +59,26 @@ const workers = [
 const autocomplete = (input, autocompleteList, list) => {
     clearList();
     list.forEach((item) => {
-        
         if (item.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != "") {
-            autocompleteList.style.display = "block";
-            
-            let autocompleteItem = document.createElement("li");
-            autocompleteItem.classList.add("autocomplete-item");
-            autocompleteItem.innerHTML = item;
-            autocompleteList.appendChild(autocompleteItem);
-            autocompleteItem.addEventListener("click", () => {
-                fillInput(item, input);
-            })
+            createList(input, autocompleteList, item);
         }
+    })
+}
+
+const dropdown = (input, autocompleteList, list) => {
+    clearList();
+    list.forEach((item) => createList(input, autocompleteList, item))
+}
+
+function createList(input, autocompleteList, item) {
+    autocompleteList.style.display = "block";
+            
+    let autocompleteItem = document.createElement("li");
+    autocompleteItem.classList.add("autocomplete-item");
+    autocompleteItem.innerHTML = item;
+    autocompleteList.appendChild(autocompleteItem);
+    autocompleteItem.addEventListener("click", () => {
+        fillInput(item, input);
     })
 }
 
@@ -92,34 +100,26 @@ function clearList() {
 }
 
 
+cityInput1.addEventListener("keyup", () => autocomplete(cityInput1, autocompleteList1, cities));
+cityInput1.addEventListener("click", () => dropdown(cityInput1, autocompleteList1, cities));
 
-cityInput1.addEventListener("keyup", () => {
-    autocomplete(cityInput1, autocompleteList1, cities);
-});
+cityInput2.addEventListener("keyup", () => autocomplete(cityInput2, autocompleteList2, cities));
+cityInput2.addEventListener("click", () => dropdown(cityInput2, autocompleteList2, cities));
 
-cityInput2.addEventListener("keyup", () => {
-    autocomplete(cityInput2, autocompleteList2, cities);
-});
+cityInput3.addEventListener("keyup", () => autocomplete(cityInput3, autocompleteList3, cities));
+cityInput3.addEventListener("click", () => dropdown(cityInput3, autocompleteList3, cities));
 
-cityInput3.addEventListener("keyup", () => {
-    autocomplete(cityInput3, autocompleteList3, cities);
-});
+workerInput1.addEventListener("keyup", () => autocomplete(workerInput1, autocompleteList4, workers));
+workerInput1.addEventListener("click", () => dropdown(workerInput1, autocompleteList4, workers));
 
-workerInput1.addEventListener("keyup", () => {
-    autocomplete(workerInput1, autocompleteList4, workers);
-});
+workerInput2.addEventListener("keyup", () => autocomplete(workerInput2, autocompleteList5, workers));
+workerInput2.addEventListener("click", () => dropdown(workerInput2, autocompleteList5, workers));
 
-workerInput2.addEventListener("keyup", () => {
-    autocomplete(workerInput2, autocompleteList5, workers);
-});
+workerInput3.addEventListener("keyup", () => autocomplete(workerInput3, autocompleteList6, workers));
+workerInput3.addEventListener("click", () => dropdown(workerInput3, autocompleteList6, workers));
 
-workerInput3.addEventListener("keyup", () => {
-    autocomplete(workerInput3, autocompleteList6, workers);
-});
-
-workerInput4.addEventListener("keyup", () => {
-    autocomplete(workerInput4, autocompleteList7, workers);
-});
+workerInput4.addEventListener("keyup", () => autocomplete(workerInput4, autocompleteList7, workers));
+workerInput4.addEventListener("click", () => dropdown(workerInput4, autocompleteList7, workers));
 
 
 const formatDate = (date) => {
@@ -194,4 +194,5 @@ function clearForm() {
     let form = document.getElementsByName("form")[0];
     form.reset();
     dateInput.type="text";
+    clearList();
 }
