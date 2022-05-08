@@ -188,3 +188,10 @@ function validateForm() {
 
     return true;
 }
+
+
+function clearForm() {
+    let form = document.getElementsByName("form")[0];
+    form.reset();
+    dateInput.type="text";
+}

@@ -33,7 +33,7 @@
                         <div class="modal-body">
                             <form name="form" onsubmit="return(validateForm());">
                                 <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="początek *" name="nazwatestowa" id="cityInput1" required></textarea>
+                                    <textarea rows="1" class="form-control my-2" placeholder="początek *" id="cityInput1" required></textarea>
                                     <ul class="autocomplete-list" id="autocompleteList1"></ul>
                                 </div>
                                 <div>
@@ -64,7 +64,7 @@
                                     <ul class="autocomplete-list" id="autocompleteList7"></ul>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="ZAMÓW">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ANULUJ</button>
+                                <button type="button" class="btn btn-danger" onclick="clearForm()" data-bs-dismiss="modal">ANULUJ</button>
                             </form>
                         </div>
                     </div>
