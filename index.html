@@ -21,70 +21,77 @@
     </head>
     <body>
         <div class="d-flex justify-content-center align-items-center vh-100">
+
+            <!-- Main button that opens the form modal -->
             <button type="button" class="main-btn" data-bs-toggle="modal" data-bs-target="#modalForm">
                 <i class="fa-solid fa-taxi"></i>
             </button>
+
+            <!-- Form modal -->
             <div class="modal fade" id="modalForm" data-bs-backdrop="static" data-bs-keyboard="false">
                 <div class="modal-dialog">
                     <div class="modal-content">
+
+                        <!-- Form header -->
                         <div class="modal-header">
                             <h2 class="modal-title w-100 text-center">Zamów taxi</h1>
                         </div>
+
+                        <!-- Form body -->
                         <div class="modal-body">
                             <form name="form" onsubmit="return(validateForm());">
+
+                                <!-- 3 city inputs -->
                                 <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2 underline">
                                     <span ><i class="fa-solid fa-location-dot"></i></span>
                                     <textarea class="w-100 px-2" placeholder="początek *" id="cityInput1" required></textarea>
                                     <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList1"></ul>
                                 </div>
                                 
-
                                 <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
                                     <span><i class="fa-solid fa-arrow-right-arrow-left"></i></span>
                                     <textarea class="w-100 px-2" placeholder="przez" id="cityInput2"></textarea>
                                     <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList2"></ul>
                                 </div>
                                 
-
                                 <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
                                     <span><i class="fa-solid fa-flag-checkered"></i></span>
                                     <textarea class="w-100 px-2" placeholder="koniec *" id="cityInput3" required></textarea>
                                     <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList3"></ul>
                                 </div>
                                 
-
+                                <!-- Date input -->
                                 <div class="d-flex align-items-baseline m-auto my-5 border-bottom w-75 px-2">
                                     <span><i class="fa-solid fa-calendar-days"></i></span>
                                     <input type="text" class="w-100 px-2" placeholder="data *" id="dateInput" required>
                                 </div>
 
+                                <!-- 4 worker inputs -->
                                 <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
                                     <span><i class="fa-solid fa-id-badge"></i></span>
                                     <textarea class="w-100 px-2" placeholder="pracownik 1 *" id="workerInput1" required></textarea>
                                     <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList4"></ul>
                                 </div>
                                 
-
                                 <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
                                     <span><i class="fa-solid fa-id-badge"></i></span>
                                     <textarea class="w-100 px-2" placeholder="pracownik 2" id="workerInput2"></textarea>
                                     <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList5"></ul>
                                 </div>
                                 
-
                                 <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
                                     <span><i class="fa-solid fa-id-badge"></i></span>
                                     <textarea class="w-100 px-2" placeholder="pracownik 3" id="workerInput3"></textarea>
                                     <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList6"></ul>
                                 </div>
                                 
-
                                 <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
                                     <span><i class="fa-solid fa-id-badge"></i></span>
                                     <textarea class="w-100 px-2" placeholder="pracownik 4" id="workerInput4"></textarea>
                                     <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList7"></ul>
                                 </div>
                                 
+                                <!-- Submit and cancel buttons -->
                                 <div class="d-flex justify-content-around">
                                     <button type="submit" class="btn btn-warning">Zamów</button>
                                     <button type="button" class="btn btn-warning" onclick="clearForm()" data-bs-dismiss="modal">Anuluj</button>
@@ -95,11 +102,15 @@
                 </div>
             </div>
         </div>
+
+        <!-- Bootstrap JS -->
         <script 
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
             crossorigin="anonymous">
         </script>
+
+        <!-- Apps script -->
         <script type="text/javascript" src="./script.js"></script>
     </body>
 </html>
