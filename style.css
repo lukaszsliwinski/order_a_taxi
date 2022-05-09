@@ -1,14 +1,33 @@
+/* Import font-family */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
+
+/* Colors */
+:root {
+    --yellow: #FEE715;
+    --yellow-light: #fef280;
+    --navy: #101820;
+}
+
+
+/* Reset default style */
 * {
     padding: 0;
     margin: 0;
 }
 
-/* Document scrollbar style - sprawdzić czemu nie działa */
+
+/* App colors and font */
+body {
+    color: var(--navy);
+    background-color: var(--navy);
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Document scrollbar style */
 .modal {
     overflow-y: scroll;
-
     scrollbar-color: var(--yellow) transparent;
     scrollbar-width: thin;
 }
@@ -26,42 +45,27 @@
 }
 
 
-
-
-
-/* input fields style */
-
+/* Input fields style */
 span {
     width: 20px;
 }
 
 textarea, input {
-    border: none;
-    overflow: auto;
     outline: none;
-
+    resize: none;
+    overflow: auto;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-
-    resize: none;
-
+    border: none;
     height: 25px;
 }
 
 
-/* colors */
-
-:root {
-    --yellow: #FEE715;
-    --yellow-light: #fef280;
-    --navy: #101820;
-}
-
-body {
-    color: var(--navy);
-    background-color: var(--navy);
-    font-family: 'Open Sans', sans-serif;
+/* Buttons */
+button {
+    background-color: var(--yellow) !important;
+    color: var(--navy) !important;
 }
 
 @keyframes pulse {
@@ -78,16 +82,6 @@ body {
     }
 }
 
-button {
-    background-color: var(--yellow) !important;
-    color: var(--navy) !important;
-}
-
-
-
-
-
-
 .main-btn {
     width: 100px;   
     height: 100px;
@@ -103,14 +97,14 @@ button {
     animation: none;
 }
 
+
+/* Form header style */
 .modal-header {
     background-color: var(--yellow);
 }
 
 
-
-/* autocomplete list style */
-
+/* Autocomplete list style */
 ul {
     position: absolute;
     display: none;
@@ -128,10 +122,10 @@ ul {
     background-color: var(--yellow-light);
 }
 
+
 /* List scrollbar style */
 .scrollbar {
     overflow-y: scroll;
-
     scrollbar-color: var(--navy) transparent;
     scrollbar-width: thin;
 }
