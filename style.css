@@ -1,32 +1,123 @@
-/* reset default styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 * {
     padding: 0;
     margin: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* Document scrollbar style - sprawdzić czemu nie działa */
+.modal {
+    overflow-y: scroll;
+
+    scrollbar-color: var(--yellow) transparent;
+    scrollbar-width: thin;
+}
+
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+}
+
+.modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+
+
+
+/* input fields style */
+
+span {
+    width: 20px;
+}
+
+textarea, input {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+
+    height: 25px;
+}
+
+
+/* colors */
+
+:root {
+    --yellow: #FEE715;
+    --yellow-light: #fef280;
+    --navy: #101820;
+}
 
 body {
+    color: var(--navy);
+    background-color: var(--navy);
     font-family: 'Open Sans', sans-serif;
 }
 
-textarea {
-    resize: none;
+@keyframes pulse {
+    0% { 
+        transform: scale(.95);
+    }
+    80% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(254, 231, 21, 0);
+    }
+    100% {
+        transform: scale(.95);
+        box-shadow: 0 0 0 0 rgba(254, 231, 21, 0);
+    }
+}
+
+button {
+    background-color: var(--yellow) !important;
+    color: var(--navy) !important;
 }
 
 
+
+
+
+
+.main-btn {
+    width: 100px;   
+    height: 100px;
+    font-size: 30px;
+    border: none;
+    line-height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(254, 231, 21, .5);
+    animation: pulse 1.2s infinite;
+}
+
+.main-btn:hover {
+    animation: none;
+}
+
+.modal-header {
+    background-color: var(--yellow);
+}
+
+
+
+/* autocomplete list style */
+
 ul {
+    position: absolute;
     display: none;
     list-style: none;
-    padding: 0;
-    margin: 0 3%;
-    position: absolute;
-    left: 0;
-    width: 94%;
-    background-color: #ffffff;
-    border: 1px solid #bbbbbb;
-    border-radius: 0 0 5px 5px;
+    margin-top: 25px;
+    max-height: 300px;
+    padding: 2px 5px;
 }
 
 .autocomplete-item {
@@ -34,5 +125,25 @@ ul {
 }
 
 .autocomplete-item:hover {
-    background-color: #dddddd;
+    background-color: var(--yellow-light);
+}
+
+/* List scrollbar style */
+.scrollbar {
+    overflow-y: scroll;
+
+    scrollbar-color: var(--navy) transparent;
+    scrollbar-width: thin;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: var(--navy);
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: transparent;
 }

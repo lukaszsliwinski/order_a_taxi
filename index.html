@@ -21,50 +21,74 @@
     </head>
     <body>
         <div class="d-flex justify-content-center align-items-center vh-100">
-            <button type="button" class="btn-lg btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalForm">
-                ZAMÓW TAXI <i class="fa-solid fa-taxi"></i>
+            <button type="button" class="main-btn" data-bs-toggle="modal" data-bs-target="#modalForm">
+                <i class="fa-solid fa-taxi"></i>
             </button>
             <div class="modal fade" id="modalForm" data-bs-backdrop="static" data-bs-keyboard="false">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2 class="modal-title w-100 text-center">ZAMÓW TAXI</h1>
+                            <h2 class="modal-title w-100 text-center">Zamów taxi</h1>
                         </div>
                         <div class="modal-body">
                             <form name="form" onsubmit="return(validateForm());">
-                                <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="początek *" id="cityInput1" required></textarea>
-                                    <ul class="autocomplete-list" id="autocompleteList1"></ul>
+                                <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2 underline">
+                                    <span ><i class="fa-solid fa-location-dot"></i></span>
+                                    <textarea class="w-100 px-2" placeholder="początek *" id="cityInput1" required></textarea>
+                                    <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList1"></ul>
                                 </div>
-                                <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="przez" id="cityInput2"></textarea>
-                                    <ul class="autocomplete-list" id="autocompleteList2"></ul>
+                                
+
+                                <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
+                                    <span><i class="fa-solid fa-arrow-right-arrow-left"></i></span>
+                                    <textarea class="w-100 px-2" placeholder="przez" id="cityInput2"></textarea>
+                                    <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList2"></ul>
                                 </div>
-                                <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="koniec *" id="cityInput3" required></textarea>
-                                    <ul class="autocomplete-list" id="autocompleteList3"></ul>
+                                
+
+                                <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
+                                    <span><i class="fa-solid fa-flag-checkered"></i></span>
+                                    <textarea class="w-100 px-2" placeholder="koniec *" id="cityInput3" required></textarea>
+                                    <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList3"></ul>
                                 </div>
-                                <div>
-                                    <input type="text" class="form-control my-2" placeholder="data *" id="dateInput" required>
+                                
+
+                                <div class="d-flex align-items-baseline m-auto my-5 border-bottom w-75 px-2">
+                                    <span><i class="fa-solid fa-calendar-days"></i></span>
+                                    <input type="text" class="w-100 px-2" placeholder="data *" id="dateInput" required>
                                 </div>
-                                <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="pracownik 1 *"  id="workerInput1" required></textarea>
-                                    <ul class="autocomplete-list" id="autocompleteList4"></ul>
+
+                                <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
+                                    <span><i class="fa-solid fa-id-badge"></i></span>
+                                    <textarea class="w-100 px-2" placeholder="pracownik 1 *" id="workerInput1" required></textarea>
+                                    <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList4"></ul>
                                 </div>
-                                <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="pracownik 2"  id="workerInput2"></textarea>
-                                    <ul class="autocomplete-list" id="autocompleteList5"></ul>
+                                
+
+                                <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
+                                    <span><i class="fa-solid fa-id-badge"></i></span>
+                                    <textarea class="w-100 px-2" placeholder="pracownik 2" id="workerInput2"></textarea>
+                                    <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList5"></ul>
                                 </div>
-                                <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="pracownik 3"  id="workerInput3"></textarea>
-                                    <ul class="autocomplete-list" id="autocompleteList6"></ul>
+                                
+
+                                <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
+                                    <span><i class="fa-solid fa-id-badge"></i></span>
+                                    <textarea class="w-100 px-2" placeholder="pracownik 3" id="workerInput3"></textarea>
+                                    <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList6"></ul>
                                 </div>
-                                <div>
-                                    <textarea rows="1" class="form-control my-2" placeholder="pracownik 4"  id="workerInput4"></textarea>
-                                    <ul class="autocomplete-list" id="autocompleteList7"></ul>
+                                
+
+                                <div class="d-flex align-items-baseline m-auto my-4 border-bottom w-75 px-2">
+                                    <span><i class="fa-solid fa-id-badge"></i></span>
+                                    <textarea class="w-100 px-2" placeholder="pracownik 4" id="workerInput4"></textarea>
+                                    <ul class="autocomplete-list scrollbar border w-75 bg-white" id="autocompleteList7"></ul>
                                 </div>
-                                <button type="submit" class="btn btn-primary">ZAMÓW</button>
-                                <button type="button" class="btn btn-danger" onclick="clearForm()" data-bs-dismiss="modal">ANULUJ</button>
+                                
+                                <div class="d-flex justify-content-around">
+                                    <button type="submit" class="btn btn-warning">Zamów</button>
+                                    <button type="button" class="btn btn-warning" onclick="clearForm()" data-bs-dismiss="modal">Anuluj</button>
+                                </div>
                             </form>
                         </div>
                     </div>
