@@ -74,10 +74,14 @@ button {
     }
     80% {
         transform: scale(1.05);
+        -webkit-box-shadow: 0 0 0 20px rgba(254, 231, 21, 0);
+        -moz-box-shadow: 0 0 0 20px rgba(254, 231, 21, 0);
         box-shadow: 0 0 0 20px rgba(254, 231, 21, 0);
     }
     100% {
         transform: scale(.95);
+        -webkit-box-shadow: 0 0 0 0 rgba(254, 231, 21, 0);
+        -moz-box-shadow: 0 0 0 0 rgba(254, 231, 21, 0);
         box-shadow: 0 0 0 0 rgba(254, 231, 21, 0);
     }
 }
@@ -89,6 +93,8 @@ button {
     border: none;
     line-height: 100px;
     border-radius: 50%;
+    -webkit-box-shadow: 0 0 0 0 rgba(254, 231, 21, .5);
+    -moz-box-shadow: 0 0 0 0 rgba(254, 231, 21, .5);
     box-shadow: 0 0 0 0 rgba(254, 231, 21, .5);
     animation: pulse 1.2s infinite;
 }
